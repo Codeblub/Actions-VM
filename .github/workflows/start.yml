@@ -33,5 +33,12 @@ jobs:
       - name: Linux vm
         run: sudo apt update && sudo apt upgrade
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      - name: Setup ssh
+        run: |
+          sudo apt install openssh-server -y 
+          sudo systemctl enable --now ssh.service
+          sudo systemctl enable --now ssh.socket
+          sudo ufw allow OpenSSH
+          ip a
+          
+
