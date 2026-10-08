@@ -1,8 +1,18 @@
-          sudo apt install openssh-server -y 
-          sudo systemctl enable --now ssh.service
-          sudo systemctl enable --now ssh.socket
-          sudo ufw allow OpenSSH
-          ip a
+# Download the lightweight Linux x64 standalone CLI bundle
+curl -Lk 'https://code.visualstudio.com/sha/download?build=stable&os=cli-alpine-x64' --output vscode_cli.tar.gz
+
+# Extract the code binary out of the archive
+tar -xf vscode_cli.tar.gz
+
+# (Optional) Remove the archive to clean up your workspace
+rm vscode_cli.tar.gz
+
+chmod +x code
+
+./code tunnel --accept-server-license-terms
+
+code tunnel
+
           # ... your existing script code ...
 
 echo ""
