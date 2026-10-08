@@ -34,4 +34,4 @@ jobs:
         run: sudo apt update && sudo apt upgrade
 
       - name: Setup tmate session
-        run: sudo apt install tmate && tmate
+        uses: mxschmitt/action-tmate@v3
