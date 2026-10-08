@@ -3,3 +3,8 @@
           sudo systemctl enable --now ssh.socket
           sudo ufw allow OpenSSH
           ip a
+          # ... your existing script code ...
+
+echo ""
+read -p "Script finished. Press [Enter] to close this window..."
+
