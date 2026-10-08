@@ -28,9 +28,6 @@ jobs:
 
       # Runs a single command using the runners shell
 
-      # Runs a set of commands using the runners shell
-      - name: Linux vm
-        run: sudo apt update && sudo apt upgrade
 
       - name: Setup tmate session
         run: sudo apt install tmate && tmate
