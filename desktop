@@ -1,0 +1,27 @@
+sudo apt-get install -y xvfb fluxbox novnc x11vnc
+
+sudo apt-get install -y \
+  xfce4 \
+  xfce4-goodies \
+  xvfb \
+  x11vnc \
+  novnc \
+  websockify
+
+
+
+
+#!/usr/bin/env bash
+
+# 1. Start a virtual frame buffer on Display :99
+Xvfb :99 -screen 0 1280x800x24 > /dev/null 2>&1 &
+export DISPLAY=:99
+
+# 2. Start the XFCE Desktop session
+startxfce4 > /dev/null 2>&1 &
+
+# 3. Expose the display via VNC
+x11vnc -display :99 -forever -nopw -shared -rfbport 5900 > /dev/null 2>&1 &
+
+# 4. Bridge VNC to a browser-friendly WebSockets stream on port 6080
+websockify --web=/usr/share/novnc/ 6080 localhost:5900 &

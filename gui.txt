@@ -1,0 +1,21 @@
+to get a desktop running on here to have a gui, copy and run this code below. This might be a slow output but this runs lots of things so trust the process
+
+
+chmod +x desktop
+bash desktop
+
+when thats done, click the ports tab and click the port 6080 forwarded address link. when on there click accept to the things an then click vnc.html. finally click connect and you will see gui
+
+to stop the vm, do ctrl + c to stop it. 
+
+if you want to turn it on again, do this
+
+chmod +x desktop
+bash desktop
+
+
+
+
+
+
+
